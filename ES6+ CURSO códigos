@@ -1,0 +1,449 @@
+TODOS CÓDIGOS CURSO ES6+
+// class List {
+//     constructor(){
+//         this.data = [];
+//     }
+
+//     add(data) {
+//         this.data.push(data);
+//         console.log(this.data);
+//     }
+// }
+// class TodoList extends List{
+//     constructor(){
+//         super();
+//         this.usuario = 'Neto';
+//     }
+
+//     mostraUsuario () {
+//         console.log(this.usuario)
+//     }
+// }
+
+// var MinhaLista = new TodoList();
+
+// document.getElementById("novotodo").onclick = function () {
+//     MinhaLista.add("Novo todo");
+// }
+
+// MinhaLista.mostraUsuario();
+
+// class TodoList {
+//     constructor(){
+//         this.todos = [];
+//     }
+
+//     static addTodo () {
+//         this.todos.push('Novo todo');
+//         console.log(this.todos);
+//     }
+// }
+
+// TodoList.addTodo();
+// TodoList.addTodo();
+// TodoList.addTodo();
+// TodoList.addTodo();
+
+// const usuario = { nome :'Neto'};
+// usuario.nome = 'Cleiton';
+// console.log(usuario);
+
+// function teste(x) {
+//     let y = 2;
+//     if (x > 5) {
+//         let y = 4
+//         console.log(x,y);
+//     }
+// }
+
+// const arr = [1,2,3,4,5,8,9];
+
+// const newArr = arr.map(function(item, index){
+//     return item * 100;
+// });
+
+// const newArr = arr.map(item => item * 100);
+
+// console.log(newArr);
+// console.log(newArr2);
+
+// console.log(newArr);
+
+// // reduce > todo vetor em 1 numero/variavel
+
+// const sum  = arr.reduce(function(total, next) {
+//     return total + next;
+// });
+
+// console.log(sum);
+
+
+// const filter = arr.filter(function(item){
+//     return item % 2 === 0;
+// });
+
+// console.log(filter);
+
+
+// const find = arr.find(function(item){
+//     return item === 2;
+// });
+
+// console.log(find);
+
+
+// const teste = () => ({nome : 'Neto'});
+
+// console.log(teste());
+
+// function soma (a = 3,b = 6) {
+//     return a + b;
+// }
+
+// const soma = (a = 3,b = 6) => a + b;
+// // valores padrão pra funções
+// const soma = (a = 3,b = 6) => a + b
+
+// console.log(soma(1));
+// console.log(soma());
+
+
+// DESESTRUTURAÇÃO
+
+// const usuario = {
+//     nome: 'Neto',
+//     idade: '25',
+//     endereco: {
+//         cidade: 'Alegrete',
+//         estado: 'RS',
+//     },
+// };
+
+// forma ruim
+// const nome = usuário.nome;
+// const idade = usuario.idade;
+// const cidade = usuario.endereco.cidade
+
+// forma boa
+// const {nome , idade, endereco:{cidade}} = usuario;
+
+// console.log(nome);
+// console.log(idade);
+// console.log(cidade);
+
+
+// function mostraNome({nome, idade}) { // sei que é um usuario
+//     console.log(nome);
+//     console.log(idade);
+// }
+
+// mostraNome(usuario); // sei que é um usuario
+
+
+// REST - resto de desestruturação ou passagem de parâmetros
+
+// const usuario = {
+//     nome: 'Neto',
+//     idade: 23,
+//     empresa: 'zallpy'
+// };
+
+// // salva todo resto do objeto após os "..."
+// const {nome, ...resto } = usuario;
+
+// console.log(nome);
+// console.log(resto);
+
+// const arr = [1,2,3,4];
+// // resto do array
+// const [a,b, ...c] = arr;
+
+// console.log(a);
+// console.log(b);
+// console.log(c);
+
+// função comum
+// function soma(a,b,c) {
+//     return a + b + c;
+// }
+
+// console.log(soma(1,3,4));
+
+// função com rest
+// arrow => significa return
+// isso serve para funções que apenas fazem algo e retornam algo
+// function soma(a,b, ...params) {
+//     return params;
+//     //.reduce((total, next) => total + next);
+// }
+
+// console.log(soma(1,2,3,4,4,54,534,543,534,));
+
+// SPREAD - propaga/repassa informações de um array pra outra estrutura de dados
+// concatenando arrays
+// const arr1 = [1,2,3];
+// const arr2 = [4,5,6];
+
+// const arr3 = [...arr1, ...arr2];
+
+// console.log(arr3);
+
+// const usuario1 = {
+//     nome: 'Neto',
+//     idade: 23,
+//     empresa: 'Zallpy',
+// };
+// // trocando o nome passando todo usuário e setando apenas novo nome
+// const usuario2 = {...usuario1, nome: 'NOMETROCADO'};
+
+// console.log(usuario2);
+
+
+// TEMPLATE LITERALS - FORMA DE INCLUKR VARIÁVEIS DENTRO DE STRINGS NO js NO ES6
+
+// const nome = "Neto";
+// const idade = 25;
+// // muitas concatenações
+// console.log('meu nome é ' + nome + ' e tenho ' + idade + ' anos');
+// // poucas concatenações devemos utilizar a "crase"
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+
+// oss = object short syntax
+
+// const nome = 'Neto';
+// const idade = 25;
+// // busca direto a variável
+// const usuario = {
+//     nome,
+//     idade,
+//     empresa: 'Zallpy',
+// };
+
+// console.log(usuario);
+
+// WEBPACK - SERVIÇO PARA PODER TRABALHAR COM VÁRIOS .JS NA APLICAÇÃO ALÉM DO MAIN.JS
+
+// import {soma} from './funcoes.js'; // importando funções
+
+// console.log(soma(1,2));
+
+// SINTAXE DE IMPORTAÇÃO E EXPORTAÇÃO DE JS
+// keyword export junta com import (deve ter o mesmo nome)
+//import {subtracao, soma} from './funcoes';
+// import soma from './soma'; //IMPORTANDO FUNCAO PADRÃO nao precisa chamar o mesmo nome
+// console.log(soma(4,19));
+// importando tudo
+
+// PROMISSES SÃO FORMAS DE REALIZAR AÇÕES  DE FORMA ASSÍNCRONAS 
+// GERALMENTE REQUISIÇÕES A API ENDPOINTS E SERVERS BACKEND
+// CRIANDO DE FORMA MANUAL
+// const minhaPromise = () => new Promise((resolve, reject) => {
+//     setTimeout(() => {resolve('OK')}, 2000);
+// });
+
+// minhaPromise().then(response => { // 
+//     console.log(response);
+
+//     minhaPromise().then(response => {
+//         console.log(response);
+    
+//         minhaPromise().then(response => {
+//             console.log(response)
+//         })
+//     })
+// })
+// .catch(err => {
+
+// });
+// quando definimos uma async, ela vira uma pŕomise
+// forma melhor de fazer a mesma coisa acima 
+// async function executaPromise () {
+//     //const response = await minhaPromise();
+//     //console.log(response);
+//     console.log(await minhaPromise()); // a segunda só executa após a primeira
+//     console.log(await minhaPromise());
+//     console.log(await minhaPromise());
+// }
+// // await nao pode ser executado fora de uma função assincrona
+// executaPromise();
+
+// const executa = async() =>   {
+//     console.log(await minhaPromise());
+//     console.log(await minhaPromise());
+//     console.log(await minhaPromise());
+// }
+
+// executa();
+// axios para chamadas de API
+// axios retornam promisses
+//CHAMANDO API DO GITHUB
+// SYNC AWAIT DENTRO DE CLASSES
+// AXIOS SOMADO A ISSO
+// import axios from 'axios';
+
+// class Api {
+//     static async getUserInfo(username){
+//         try {
+//             const response = await axios.get(`https://api.github.com/users/${username}`);
+//             console.log(response);
+//         } catch (err) {
+//             console.warn('Erro na API');
+//         }
+//     }
+// }
+
+// Api.getUserInfo('netoiung');
+// Api.getUserInfo('netdasdoiung');
+
+// SISTEMA INTEIRO
+
+// import api from './api';
+
+// // classe que controla a aplicação
+// class App {
+//     constructor(){
+//         this.repositories = [];
+//         // tudo pelo lado do JS
+//         this.formEl = document.getElementById('repo-form');
+
+//         this.inputEl = document.querySelector('input[name=repository]');
+
+//         this.listEl = document.getElementById('repo-list');
+//         // salvar registros de eventos
+//         this.registerHandlers();
+//     }
+//     // registra eventos
+//     // primeiro evento (submit do usuario)
+//     registerHandlers(){ // função que apenas chama outra utilizamos arrow
+//         this.formEl.onsubmit = event => this.addRepository(event); // função com parâmetro único "event" que retorna função addRepository passando o parâmetro event 
+//     }
+
+//     setLoading(loading = true) {
+//         if (loading === true){
+//             let loadingEl = document.createElement('span');
+//             loadingEl.appendChild(document.createTextNode('Carregando'));
+//             loadingEl.setAttribute('id', 'loading');
+//             this.formEl.appendChild(loadingEl);
+//         } else {
+//             document.getElementById('loading').remove();
+//         }
+//     }
+
+
+//     async addRepository(event) {
+//         event.preventDefault(); // previne que a pagina html recarregue
+        
+//         const repoInput = this.inputEl.value;
+        
+//         if (repoInput.length === 0) 
+//             return;
+
+//         this.setLoading();
+        
+//             try {
+//                 const response = await api.get(`/repos/${repoInput}`);
+
+//                 // Usaremos desestruturação
+//                 const { name, description, html_url, owner: { avatar_url}} = response.data;
+        
+//                 console.log(response);
+                
+//                 // os dados aqui são capturados acima
+//                 this.repositories.push({
+//                     name,
+//                     description,
+//                     avatar_url,
+//                     html_url
+//                 });
+        
+//                 this.inputEl.value = '';
+        
+//                 this.render();
+//             } catch (err) {
+//                 alert('O repositório não existe');
+//             }  
+//                 this.setLoading(false);
+            
+        
+//     }
+//         render () {
+//             this.listEl.innerHTML = ""; // apaga conteúdo do elemento
+//             this.repositories.forEach(repo => { // passa pelos elementos e renderiza
+//                 let imgEl = document.createElement('img');
+//                 imgEl.setAttribute('src', repo.avatar_url);
+                
+//                 let titleEl = document.createElement('strong');
+//                 titleEl.appendChild(document.createTextNode(repo.name));
+                
+//                 let descriptionEl = document.createElement('p');
+//                 descriptionEl.appendChild(document.createTextNode(repo.description));
+
+//                 let linkEl = document.createElement('a');
+//                 linkEl.setAttribute('target', '_blank');
+//                 linkEl.setAttribute('href', repo.html_url);
+//                 linkEl.appendChild(document.createTextNode('Acessar'));
+
+//                 let listItemEl = document.createElement('li');
+//                 listItemEl.appendChild(imgEl);
+//                 listItemEl.appendChild(titleEl);
+//                 listItemEl.appendChild(descriptionEl);
+//                 listItemEl.appendChild(linkEl);
+//                 this.listEl.appendChild(listItemEl);
+//             });
+//         }
+// }
+// new App();
+
+// DESAFIO 1
+// import {Usuario as ClasseUsuario} from './functions';
+
+// import idade from './functions';
+
+// //import usuario, {idade as IdadeUsuario} from './functions';
+
+
+// console.log();
+// //console.log(das);
+// //console.log(idade);
+// console.log(IdadeUsuario);
+
+// Funão delay aciona o .then após 1s
+// const delay = () => new Promise(resolve => setTimeout(resolve, 1000));
+
+// function umPorSegundo() {  delay().then(() => {    
+//     console.log('1s');    delay().then(() => {      
+//         console.log('2s');      delay().then(() => {        
+//             console.log('3s');      
+//         });    
+//     })  
+// });
+// }
+
+//  const chamadasAssincronas = async() => {
+//     console.log(await umPorSegundo());
+//     console.log(await umPorSegundo());
+//     console.log(await umPorSegundo());
+// };
+// //umPorSegundo();
+// chamadasAssincronas();
+
+// import axios from 'axios';
+
+// function getUserFromGithub(user) {  
+//     axios.get(`https://api.github.com/users/${user}`)
+//         .then(response => {     
+//              console.log(response.data);    
+//             })    
+//             .catch(err => {      
+//                 console.log('Usuário não existe');    
+//             })}
+            
+// // getUserFromGithub('diego3g');
+// // getUserFromGithub('diego3g124123');
+
+// const chamadasAssincronass = async() => {
+//     console.log(await getUserFromGithub('diego3g'));
+//     console.log(await getUserFromGithub('netoiung'));
+// };
+
+// chamadasAssincronass();
